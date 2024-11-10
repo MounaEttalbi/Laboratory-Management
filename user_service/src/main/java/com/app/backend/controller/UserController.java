@@ -11,7 +11,7 @@ import com.app.backend.repository.UserRepository;
 import com.app.backend.entities.User;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 public class UserController {
 	
 	

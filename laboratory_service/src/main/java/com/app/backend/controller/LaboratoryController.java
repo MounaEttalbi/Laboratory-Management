@@ -11,7 +11,7 @@ import com.app.backend.entities.Laboratory;
 import com.app.backend.repository.LaboratoryRepository;
 
 @RestController
-@RequestMapping("/api/laboratory")
+@RequestMapping("/laboratory") 
 public class LaboratoryController {
 	
 	private LaboratoryRepository laboratoryRepository;
