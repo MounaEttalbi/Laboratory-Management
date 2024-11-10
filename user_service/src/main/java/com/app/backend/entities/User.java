@@ -3,14 +3,8 @@ package com.app.backend.entities;
 import com.app.backend.model.Laboratory;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 
-@Getter @Setter
-@Data
 @Entity
 public class User {
 	@Id
@@ -43,6 +37,64 @@ public class User {
 		this.laboratoire = laboratoire;
 		this.fkIdLaboratoire = fkIdLaboratoire;
 	}
+
+	//Getters and Setters
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getNomComplet() {
+		return nomComplet;
+	}
+
+	public void setNomComplet(String nomComplet) {
+		this.nomComplet = nomComplet;
+	}
+
+	public String getNumTel() {
+		return numTel;
+	}
+
+	public void setNumTel(String numTel) {
+		this.numTel = numTel;
+	}
+
+	public String getProfession() {
+		return profession;
+	}
+
+	public void setProfession(String profession) {
+		this.profession = profession;
+	}
+
+	public byte[] getSignature() {
+		return signature;
+	}
+
+	public void setSignature(byte[] signature) {
+		this.signature = signature;
+	}
+
+	public Laboratory getLaboratoire() {
+		return laboratoire;
+	}
+
+	public void setLaboratoire(Laboratory laboratoire) {
+		this.laboratoire = laboratoire;
+	}
+
+	public Long getFkIdLaboratoire() {
+		return fkIdLaboratoire;
+	}
+
+	public void setFkIdLaboratoire(Long fkIdLaboratoire) {
+		this.fkIdLaboratoire = fkIdLaboratoire;
+	}
+	
 	
 	
 }
