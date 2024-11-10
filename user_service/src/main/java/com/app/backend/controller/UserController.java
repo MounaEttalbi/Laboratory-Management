@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.backend.repository.UserRepository;
+import com.app.backend.client.LaboratoryRestClient;
 import com.app.backend.entities.User;
+import com.app.backend.model.Laboratory;
 
 @RestController
 @RequestMapping("/user")
@@ -16,10 +18,12 @@ public class UserController {
 	
 	
 	private UserRepository userRepository;
+	private LaboratoryRestClient laboratoryRestClient;
 	
 
-	public UserController (UserRepository userRepository) {
+	public UserController (UserRepository userRepository ,LaboratoryRestClient laboratoryRestClient) {
 		this.userRepository = userRepository;
+		this.laboratoryRestClient =laboratoryRestClient;
 	}
 	
 	@GetMapping("/all")
@@ -29,6 +33,9 @@ public class UserController {
 	
 	@GetMapping("/{id}")
 	public User getUserById(@PathVariable String id) {
-		return userRepository.findById(id).get();
+		User user= userRepository.findById(id).get();
+		Laboratory laboratory = laboratoryRestClient.findLaboratoryById(user.getFkIdLaboratoire());
+		user.setLaboratoire(laboratory);
+		return user;
 	}
 }
