@@ -1,0 +1,40 @@
+.contact {
+    padding: 2rem;
+    text-align: center;
+    background-color: #e8f5e9;
+  
+    h2 {
+      font-size: 2rem;
+      color: #00796b;
+      margin-bottom: 1rem;
+    }
+  
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      input, textarea {
+        width: 100%;
+        max-width: 500px;
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+  
+      button {
+        padding: 0.75rem 2rem;
+        border: none;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+  
+      button:hover {
+        background-color: #66bb6a;
+      }
+    }
+  }
+  
