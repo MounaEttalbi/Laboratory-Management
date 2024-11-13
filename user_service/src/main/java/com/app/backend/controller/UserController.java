@@ -25,8 +25,11 @@ public class UserController {
 		this.userRepository = userRepository;
 		this.laboratoryRestClient =laboratoryRestClient;
 	}
-	
-	
+
+	@GetMapping("/all")
+	public List<User> getAllUsers(){
+		return userRepository.findAll();
+	}
 	
 	@GetMapping("/{id}")
 	public User getUserById(@PathVariable String id) {
